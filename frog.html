@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>Frog</title>
+</head>
+<body>
+
+
+
+    <p style="margin-top:20%;margin-left:40%;" id="resultado"></p>
+</body>
+</html>
+
+<script type="text/javascript">
+  
+    var frogDistance = prompt("Digite a distância que o sapo irá percorrer...");
+	var step = 1;
+	var jump=2;
+      
+	
+	function comb(frogDistance){
+	      
+		    
+			
+		      if(frogDistance == 1)
+                return 1;
+        if(frogDistance == 2)
+            return 1;
+	  
+	
+	return  comb(frogDistance -1) + comb(frogDistance - 2);
+	
+	}
+	
+	
+	
+
+
+	
+	
+    document.getElementById("resultado").innerHTML = "Resultado: "+(comb(frogDistance)+1) ;
+
+
+</script>

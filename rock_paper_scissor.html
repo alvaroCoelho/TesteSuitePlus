@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title>Papel, Pedra e Tesoura</title>
+</head>
+<body>
+
+
+
+    <p  style="margin-top:10%;margin-left:40%;" id="computerChoiceP">
+    </p>
+    <p  style="margin-top:5%;margin-left:40%;" id="userChoiceP">
+    </p>
+    <p style="margin-top:5%;margin-left:40%;" id="resultado"></p>
+</body>
+</html>
+<script type="text/javascript">
+    alert("Pronto para iniciar o jogo? Clique em ok.");
+    var userChoice = prompt("Você escolhe pedra, papel ou tesoura?");
+    var computerChoice = Math.random();
+    if (computerChoice < 0.34) {
+        computerChoice = "pedra";
+    } else if (computerChoice <= 0.67) {
+        computerChoice = "papel";
+    } else {
+        computerChoice = "tesoura";
+    }
+    document.getElementById("userChoiceP").innerHTML = "Você: " + userChoice;
+    document.getElementById("computerChoiceP").innerHTML = "Computador: " + computerChoice;
+
+
+    var compare = function (choice1, choice2) {
+        if (choice1 === choice2)
+            return ("O resultado é um empate!");
+        else if (choice1 === "pedra") {
+            if (choice2 === "tesoura")
+                return ("pedra vence");
+            else {
+                return ("papel vence");
+            }
+        }
+        else if (choice1 === "papel") {
+            if (choice2 === "pedra")
+                return "papel vence";
+            else {
+                return "tesoura vence";
+            }
+        }
+        else if (choice1 === "tesoura") {
+            if (choice2 === "pedra")
+                return "pedra vence";
+            else {
+                return "tesoura vence";
+            }
+        }
+    };
+    document.getElementById("resultado").innerHTML = "Resultado: " + compare(userChoice, computerChoice);
+
+
+</script>

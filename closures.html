@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>Closure</title>
+</head>
+<body>
+
+
+</body>
+</html>
+
+    In my life, I used the following web search engines:<br/>
+    <a  href="javascript:registerHandlers();">Yahoo!</a><br/>
+    <a href="javascript:registerHandlers();">AltaVista</a><br/>
+    <a href="javascript:registerHandlers();">Google</a><br/>
+
+
+
+<script type="text/javascript">
+    
+function registerHandlers() {
+
+  var as = document.getElementsByTagName('a');
+
+ 
+for (var i = 0; i < as.length; ++i) {
+    as[i].onclick = getHandler(i);
+     }
+   
+
+	}  
+
+	function getHandler(n) {
+         return function() {
+        alert( 'You clicked on: ' + n );
+       };
+}
+
+</script>
